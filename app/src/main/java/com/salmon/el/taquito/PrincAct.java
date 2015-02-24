@@ -1,39 +1,51 @@
 package com.salmon.el.taquito;
 
-import android.support.v7.app.ActionBarActivity;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.Window;
 
 
-public class PrincAct extends ActionBarActivity {
+public class PrincAct extends Activity {
+
+    // Variable constante para asignar el tiempo del thread
+    private static final long SPLASH_SCREEN_DELAY = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Se define la orientacion de la pantalla
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        // Oculta el la barra de notificaciones
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         setContentView(R.layout.activity_princ);
+
+        /*
+            Thread que hace el cambio a la actividad principal
+         */
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+
+                // Hace el cambio de actividades.
+                Intent mainIntent = new Intent().setClass(
+                        PrincAct.this, Login.class);
+                startActivity(mainIntent);
+
+                //Cerramos la actividad para que el usuario no pueda regresar
+                finish();
+            }
+        };
+
+        // Timer para lograr hacer el cambio.
+        Timer timer = new Timer();
+        timer.schedule(task, SPLASH_SCREEN_DELAY);
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_princ, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
