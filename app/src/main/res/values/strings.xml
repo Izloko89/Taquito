@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Taquito</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="slogan">Slogan</string>
     <string name="action_settings">Settings</string>
 
 </resources>
