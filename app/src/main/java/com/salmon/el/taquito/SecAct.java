@@ -1,12 +1,15 @@
 package com.salmon.el.taquito;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
-public class SecAct extends ActionBarActivity {
+public class SecAct extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +38,25 @@ public class SecAct extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void CheckIn(View v){
+        Intent checkIn = new Intent(SecAct.this,CheckIn.class);
+        startActivity(checkIn);
+    }
+
+    public void BusCar(View v){
+        Intent busCar = new Intent(SecAct.this,BusCar.class);
+        startActivity(busCar);
+    }
+
+    public void AmiGos(View v){
+        Intent amiGos = new Intent(SecAct.this,AmiGos.class);
+        startActivity(amiGos);
+    }
+
+    public void PerFil(View v){
+        Intent perFil = new Intent(SecAct.this,PerFil.class);
+        startActivity(perFil);
     }
 }
