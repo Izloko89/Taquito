@@ -1,5 +1,6 @@
 package com.salmon.el.taquito;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -11,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class Login extends ActionBarActivity {
+public class Login extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,7 @@ public class Login extends ActionBarActivity {
             public void onClick(View view) {
                 String usuario = ((EditText) findViewById(R.id.txtusuario)).getText().toString();
                 String password = ((EditText) findViewById(R.id.txtpassword)).getText().toString();
-                if (usuario.equals("admin") && password.equals("admin")) {
+                if (usuario.equals("aws") && password.equals("aws")) {
                     Intent formularioLogin = new Intent(Login.this, Bienvenido.class);
                     startActivity(formularioLogin);
                 } else {
