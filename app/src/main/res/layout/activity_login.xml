@@ -7,37 +7,111 @@
     android:background="@drawable/fondo1">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="170dp"
+        android:layout_width="170dp"
+        android:layout_height="250dp"
         android:id="@+id/logo"
         android:scaleType="fitXY"
         android:src="@drawable/logo"
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/logo" />
 
-<TwoLineListItem
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/logo"
-    android:layout_marginTop="25dp"
-    android:padding="15dp"
-    android:layout_centerHorizontal="true">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/User"
-        android:id="@+id/textView"
-        android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="33dp"
+        android:src="@drawable/user"
+        android:id="@+id/user"
+        android:scaleType="fitXY"
+        android:layout_marginTop="25dp"
+        android:contentDescription="@string/user"
+        android:layout_below="@+id/logo"
+        android:layout_toLeftOf="@+id/txtusuario"
+        android:layout_toStartOf="@+id/txtusuario" />
 
     <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/txtusuario"
+        android:layout_above="@+id/password"
+        android:layout_alignLeft="@+id/txtpassword"
+        android:layout_alignStart="@+id/txtpassword" />
+
+    <ImageView
+        android:layout_width="208dp"
+        android:layout_height="38dp"
+        android:src="@drawable/password"
+        android:id="@+id/password"
+        android:scaleType="fitXY"
+        android:layout_below="@id/user"
+        android:layout_marginTop="25dp"
+        android:contentDescription="@string/password" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/txtpassword"
+        android:layout_alignTop="@+id/password"
+        android:layout_toRightOf="@+id/password"
+        android:layout_toEndOf="@+id/password" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:background="@drawable/entrar"
+        android:id="@+id/login"
+        android:layout_below="@id/txtpassword"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/login"
+        android:background="@drawable/olvida"
+        android:id="@+id/olvida"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        />
+
+    <ImageView
+        android:layout_width="85dp"
+        android:layout_height="110dp"
+        android:src="@drawable/o"
+        android:id="@+id/o"
+        android:layout_below="@id/olvida"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:background="@drawable/registrarse"
+        android:id="@+id/registrer"
+        android:layout_below="@id/o"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/fabo"
+        android:id="@+id/fabo"
+        android:layout_below="@id/registrer"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
+
+    <!--<EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:id="@+id/txtusuario"
-        android:layout_below="@id/textView"
-        android:layout_centerHorizontal="true"/>
+        android:layout_alignBottom="@id/textView"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -63,7 +137,6 @@
         android:id="@+id/login"
         android:layout_below="@id/txtpassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"/>
-</TwoLineListItem>
+        android:layout_marginTop="15dp"/>-->
 
 </RelativeLayout>

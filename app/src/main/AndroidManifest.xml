@@ -18,11 +18,17 @@
         </activity>
         <activity
             android:name=".Login"
-            android:label="@string/title_activity_login" >
+            android:label="@string/title_activity_login"
+            android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
             android:name=".Bienvenido"
             android:label="@string/title_activity_bienvenido" >
+        </activity>
+        <activity
+            android:name=".SecAct"
+            android:label="@string/title_activity_sec"
+            android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
     </application>
 
